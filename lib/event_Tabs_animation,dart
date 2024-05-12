@@ -1,0 +1,74 @@
+class CustomTabBar extends StatefulWidget {
+  @override
+  _CustomTabBarState createState() => _CustomTabBarState();
+}
+
+class _CustomTabBarState extends State<CustomTabBar> with SingleTickerProviderStateMixin {
+  TabController _tabController;
+
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(length: 2, vsync: this);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 40, // Adjust the height as needed
+      width: double.infinity, // Make the container width as long as needed
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20), // Half of the desired height for circular ends
+        color: Colors.grey[200], // Background color
+      ),
+      child: TabBar(
+        controller: _tabController,
+        indicator: DotTabIndicator(
+          indicatorColor: Colors.blue, // Default indicator color
+          dotRadius: 5, // Adjust the dot size as needed
+          padding: EdgeInsets.symmetric(horizontal: 10), // Adjust padding as needed
+        ),
+        tabs: [
+          Tab(text: 'Tab 1'),
+          Tab(text: 'Tab 2'),
+        ],
+      ),
+    );
+  }
+}
+
+class DotTabIndicator extends Decoration {
+  final Color indicatorColor;
+  final double dotRadius;
+  final EdgeInsetsGeometry padding;
+
+  const DotTabIndicator({
+    this.indicatorColor,
+    this.dotRadius = 2.0,
+    this.padding = EdgeInsets.zero,
+  });
+
+  @override
+  _DotPainter createBoxPainter([VoidCallback onChanged]) {
+    return _DotPainter(this, onChanged);
+  }
+}
+
+class _DotPainter extends BoxPainter {
+  final DotTabIndicator decoration;
+
+  _DotPainter(this.decoration, VoidCallback onChanged) : super(onChanged);
+
+  @override
+  void paint(Canvas canvas, Offset offset, ImageConfiguration configuration) {
+    assert(configuration.size != null);
+    final rect = offset & configuration.size;
+    final Paint paint = Paint();
+    paint.color = decoration.indicatorColor;
+    final Offset dotOffset = Offset(
+      offset.dx + rect.width / 2,
+      rect.bottom - (configuration.size.height - decoration.padding.vertical) / 2,
+    );
+    canvas.drawCircle(dotOffset, decoration.dotRadius, paint);
+  }
+}
