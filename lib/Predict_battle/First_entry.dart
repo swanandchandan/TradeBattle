@@ -551,9 +551,7 @@ class _First_entryState extends State<First_entry> {
                       child: SingleChildScrollView(
                         child: Column(
                           children: [
-                            question_tab2(
-                                screenWidth: screenWidth,
-                                screenHeight: screenHeight),
+                            question_tab2(),
                             SizedBox(
                               height: screenHeight * 0.02,
                             ),

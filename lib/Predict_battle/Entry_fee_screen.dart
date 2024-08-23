@@ -3,9 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:trade_battle_application/Predict_battle/Current_balace.dart';
 import 'package:trade_battle_application/Predict_battle/Entry1_summary.dart';
 import 'package:trade_battle_application/Predict_battle/Fee_breakdown.dart';
+import 'package:trade_battle_application/Predict_battle/First_entry.dart';
 import 'package:trade_battle_application/Predict_battle/Multiplier_screen.dart';
+import 'package:trade_battle_application/Predict_battle/Post_deletion_screen.dart';
 import 'package:trade_battle_application/Predict_battle/Question_tab.dart';
 import 'package:trade_battle_application/Predict_battle/Question_tab2.dart';
+import 'package:trade_battle_application/Predict_battle/Quiz_template.dart';
+import 'package:trade_battle_application/Predict_battle/workshop_screens.dart';
 
 class Entry_Fee_screen extends StatefulWidget {
   const Entry_Fee_screen({super.key});
@@ -38,8 +42,8 @@ class _Entry_Fee_screenState extends State<Entry_Fee_screen> {
                             Navigator.pop(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) =>
-                                      const Multiplier_screen(),),
+                                builder: (context) => const Multiplier_screen(),
+                              ),
                             );
                           },
                           child: const Icon(Icons.arrow_back_ios, size: 20),
@@ -654,8 +658,9 @@ class _Entry_Fee_screenState extends State<Entry_Fee_screen> {
                                             Navigator.push(
                                               context,
                                               MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      const Current_Balance()),
+                                                builder: (context) =>
+                                                    const Current_Balance(),
+                                              ),
                                             );
                                           },
                                           child: Container(
@@ -796,7 +801,15 @@ class _Entry_Fee_screenState extends State<Entry_Fee_screen> {
                                           child: Container(),
                                         ),
                                         GestureDetector(
-                                          onTap: () {},
+                                          onTap: () {
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder: (context) =>
+                                                    const Workshop_MobileLayout(),
+                                              ),
+                                            );
+                                          },
                                           child: Container(
                                             width: screenWidth * 0.20,
                                             height: screenHeight * 0.030,
@@ -820,7 +833,15 @@ class _Entry_Fee_screenState extends State<Entry_Fee_screen> {
                                           width: screenWidth * 0.01,
                                         ),
                                         GestureDetector(
-                                          onTap: () {},
+                                          onTap: () {
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder: (context) =>
+                                                    const Post_deletion_screen(),
+                                              ),
+                                            );
+                                          },
                                           child: Container(
                                             width: screenWidth * 0.12,
                                             height: screenHeight * 0.030,

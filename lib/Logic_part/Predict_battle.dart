@@ -1,16 +1,11 @@
 import 'package:flutter/material.dart';
 
-class question_tab extends StatelessWidget {
-  const question_tab({
-    super.key,
-    required this.screenWidth,
-    required this.screenHeight,
-  });
+class  Expermiment extends StatelessWidget {
 
-  final double screenWidth;
-  final double screenHeight;
   @override
   Widget build(BuildContext context) {
+    final double screenWidth = MediaQuery.of(context).size.width;
+    final double screenHeight = MediaQuery.of(context).size.height;
     return Container(
       width: screenWidth * 0.92,
       height: screenHeight * 0.25,

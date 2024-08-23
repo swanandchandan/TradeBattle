@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:trade_battle_application/App_ELEments/Ans_Options.dart';
 import 'package:trade_battle_application/Predict_battle/Predict_options.dart';
 
 class question_tab2 extends StatelessWidget {
-  const question_tab2({
-    super.key,
-    required this.screenWidth,
-    required this.screenHeight,
-  });
-
-  final double screenWidth;
-  final double screenHeight;
-
   @override
   Widget build(BuildContext context) {
+    final double screenWidth = MediaQuery.of(context).size.width;
+    final double screenHeight = MediaQuery.of(context).size.height;
+    final List<String> answerOptions = [
+      'Option 1',
+      'Option 2',
+      'Option 3',
+      'Option 4'
+    ];
     return Container(
       width: screenWidth * 0.92,
       height: screenHeight * 0.40,
@@ -135,108 +135,14 @@ class question_tab2 extends StatelessWidget {
               height: screenHeight * 0.02,
             ),
             Expanded(
-              child: GestureDetector(
-                onTap: () {},
-                child: Container(
-                  width: double.infinity,
-                  height: screenHeight * 0.06,
-                  decoration: BoxDecoration(
-                    color:
-                        const Color.fromARGB(255, 19, 18, 18).withOpacity(0.10),
-                    borderRadius: BorderRadius.circular(11),
-                  ),
-                  child: Center(
-                    child: Text(
-                      "Bullish",
-                      style: TextStyle(
-                        fontSize: screenHeight * 0.023,
-                        fontWeight: FontWeight.normal,
-                        color: const Color.fromRGBO(41, 41, 41, 1),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            SizedBox(
-              height: screenHeight * 0.01,
-            ),
-            Expanded(
-              child: GestureDetector(
-                onTap: () {},
-                child: Container(
-                  width: double.infinity,
-                  height: screenHeight * 0.06,
-                  decoration: BoxDecoration(
-                    color:
-                        const Color.fromARGB(255, 19, 18, 18).withOpacity(0.10),
-                    borderRadius: BorderRadius.circular(11),
-                  ),
-                  child: Center(
-                    child: Text(
-                      "Bearish",
-                      style: TextStyle(
-                        fontSize: screenHeight * 0.023,
-                        fontWeight: FontWeight.normal,
-                        color: const Color.fromRGBO(41, 41, 41, 1),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            SizedBox(
-              height: screenHeight * 0.01,
-            ),
-            Expanded(
-              child: GestureDetector(
-                onTap: () {},
-                child: Container(
-                  width: double.infinity,
-                  height: screenHeight * 0.06,
-                  decoration: BoxDecoration(
-                    color:
-                        const Color.fromARGB(255, 19, 18, 18).withOpacity(0.10),
-                    borderRadius: BorderRadius.circular(11),
-                  ),
-                  child: Center(
-                    child: Text(
-                      "Bearish",
-                      style: TextStyle(
-                        fontSize: screenHeight * 0.023,
-                        fontWeight: FontWeight.normal,
-                        color: const Color.fromRGBO(41, 41, 41, 1),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            SizedBox(
-              height: screenHeight * 0.01,
-            ),
-            Expanded(
-              child: GestureDetector(
-                onTap: () {},
-                child: Container(
-                  width: double.infinity,
-                  height: screenHeight * 0.06,
-                  decoration: BoxDecoration(
-                    color:
-                        const Color.fromARGB(255, 19, 18, 18).withOpacity(0.10),
-                    borderRadius: BorderRadius.circular(11),
-                  ),
-                  child: Center(
-                    child: Text(
-                      "Bearish",
-                      style: TextStyle(
-                        fontSize: screenHeight * 0.023,
-                        fontWeight: FontWeight.normal,
-                        color: const Color.fromRGBO(41, 41, 41, 1),
-                      ),
-                    ),
-                  ),
-                ),
+              child: ListView.builder(
+                itemCount: answerOptions.length,
+                itemBuilder: (context, index) {
+                  return Option2(
+                    screenHeight: MediaQuery.of(context).size.height,
+                    lable: answerOptions[index],
+                  );
+                },
               ),
             ),
           ],

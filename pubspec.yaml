@@ -39,7 +39,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
+  flutter_svg: ^2.0.10+1
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
   # activated in the `analysis_options.yaml` file located at the root of your
@@ -61,8 +61,8 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
       - assets/images/TBcurrency.png
-      - assets/images/TBmybattle.png
-      - assets/images/join.png
+      - assets/images/Icon_mybattle.png
+      - assets/images/Icon_join.png
       - assets/images/Education.png
       - assets/images/News.png
       - assets/images/Leader Board.png
@@ -78,7 +78,16 @@ flutter:
       - assets/images/Spots.png
       - assets/images/group.png
       - assets/images/cup.png
-     
+      - assets/images/pattern_Appbar.png
+      - assets/images/Arrow_left.png
+      - assets/images/Arrow_right.png
+      - assets/images/Icon_inquiry.png
+      - assets/images/Icon_live.png
+      - assets/images/halfwell.png
+      - assets/svg/app_svg/Layered_shapd.svg
+      - assets/images/medal-star.png
+      
+      
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -91,10 +100,23 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
+  fonts:
+    - family: Nexa
+      fonts:
+        - asset: assets/fonts/NexaThin.otf
+          weight: 100
+        - asset: assets/fonts/NexaLight.otf
+          weight: 300
+        - asset: assets/fonts/NexaRegular.otf
+          weight: 400
+        - asset: assets/fonts/NexaBook.otf
+          weight: 500
+        - asset: assets/fonts/NexaBold.otf
+          weight: 600
+        - asset: assets/fonts/NexaHeavy.otf
+          weight: 800
+        - asset: assets/fonts/NexaBlack.otf
+          weight: 900 
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
